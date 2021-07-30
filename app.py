@@ -1,6 +1,5 @@
 from flask import Flask
 import flask
-import gpt3
 import predict
 
 
