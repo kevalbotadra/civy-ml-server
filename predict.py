@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 import numpy as np
 from sklearn import preprocessing
-from tensorflow import keras
+from keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 
 
@@ -31,7 +31,7 @@ def predictBudget(budgetList, monthToPredict, cateogry):
     if cateogry == "environment":
         stock_name = "GPS"
     
-    model = keras.models.load_model(f"models/{stock_name}_LSTM.h5")
+    model = load_model(f"models/{stock_name}_LSTM.h5")
     
 
     df = pd.read_csv(f"data/{stock_name}.csv")
